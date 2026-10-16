@@ -1,0 +1,131 @@
+{
+  "sections": {
+    "faq_intro": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>FAQ</strong>",
+            "heading_size": "h0"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Answers about O&amp;M orders, shipping, returns, and product care.</p>"
+          }
+        }
+      },
+      "block_order": ["heading", "text"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 0
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "returns": {
+          "type": "question",
+          "settings": {
+            "heading": "What is your return window?",
+            "answer": "<p>O&amp;M accepts unworn returns within 30 days of delivery. Items should have original tags attached. Start a return from your order confirmation email or the <a href=\"/pages/contact\">contact page</a>.</p>",
+            "open_by_default": false
+          }
+        },
+        "shipping_time": {
+          "type": "question",
+          "settings": {
+            "heading": "How long does shipping take?",
+            "answer": "<p>Most orders leave the warehouse in 1–2 business days. Domestic delivery is typically 3–7 business days after dispatch. International orders can take 7–21 business days depending on customs.</p>",
+            "open_by_default": false
+          }
+        },
+        "shipping_cost": {
+          "type": "question",
+          "settings": {
+            "heading": "How much is shipping?",
+            "answer": "<p>Shipping rates are calculated at checkout based on your address and order size. Free-shipping thresholds, when offered, appear in the cart drawer.</p>",
+            "open_by_default": false
+          }
+        },
+        "tracking": {
+          "type": "question",
+          "settings": {
+            "heading": "How can I track my order?",
+            "answer": "<p>A tracking number is emailed as soon as your O&amp;M parcel ships. Use that link for live carrier updates.</p>",
+            "open_by_default": false
+          }
+        },
+        "customs": {
+          "type": "question",
+          "settings": {
+            "heading": "Will I pay customs?",
+            "answer": "<p>International duties are set by your local customs office. If charges apply, they are the customer’s responsibility and are not collected by O&amp;M at checkout.</p>",
+            "open_by_default": false
+          }
+        },
+        "fit": {
+          "type": "question",
+          "settings": {
+            "heading": "How do O&M pieces fit?",
+            "answer": "<p>Most tees and tops are a relaxed streetwear fit. Check the size guide on each product page. If you are between sizes, size up.</p>",
+            "open_by_default": false
+          }
+        },
+        "care": {
+          "type": "question",
+          "settings": {
+            "heading": "How should I wash my order?",
+            "answer": "<p>Turn garments inside out, wash cold, and hang dry. High heat can fade prints and shrink fabrics.</p>",
+            "open_by_default": false
+          }
+        },
+        "origin": {
+          "type": "question",
+          "settings": {
+            "heading": "Where are your products made?",
+            "answer": "<p>O&amp;M works with small-run apparel partners. Origin can vary by drop and is listed on the product page when available.</p>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": [
+        "returns",
+        "shipping_time",
+        "tracking",
+        "fit"
+      ],
+      "settings": {
+        "kicker": "",
+        "heading": "",
+        "subheading": "",
+        "show_support": false,
+        "support_heading": "Still need help?",
+        "support_text": "<p>Email <a href=\"mailto:hello@oandm.com\">hello@oandm.com</a> or use the <a href=\"/pages/contact\">contact form</a>. We typically reply within one business day.</p>",
+        "support_label": "Contact us",
+        "support_link": "/pages/contact",
+        "enable_schema": true,
+        "background": "#f4f4f2",
+        "text_color": "#111111",
+        "accent_color": "#C69545",
+        "padding_top": 12,
+        "padding_bottom": 64
+      }
+    }
+  },
+  "order": ["faq_intro", "main", "faq"]
+}

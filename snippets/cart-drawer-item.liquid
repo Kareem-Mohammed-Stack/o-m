@@ -1,0 +1,26 @@
+{%- comment -%}
+  Line-item markup for custom cart UIs. The live cart drawer still uses the
+  theme cart-drawer section so totals stay server-rendered.
+{%- endcomment -%}
+{%- assign item = item | default: line_item -%}
+{%- if item -%}
+  <div class="om-cart-item" data-line-key="{{ item.key }}">
+    <a class="om-cart-item__media" href="{{ item.url }}">
+      {%- if item.image -%}
+        {{ item.image | image_url: width: 240 | image_tag: loading: 'lazy', widths: '120, 180, 240', alt: item.image.alt | default: item.product.title | escape }}
+      {%- endif -%}
+    </a>
+    <div class="om-cart-item__info">
+      <a class="om-cart-item__title" href="{{ item.url }}">{{ item.product.title }}</a>
+      {%- unless item.product.has_only_default_variant -%}
+        <p class="om-cart-item__variant">{{ item.variant.title }}</p>
+      {%- endunless -%}
+      <div class="om-cart-item__price">
+        {{ item.final_line_price | money }}
+        {%- if item.original_line_price > item.final_line_price -%}
+          <s>{{ item.original_line_price | money }}</s>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}

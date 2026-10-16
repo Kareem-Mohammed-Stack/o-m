@@ -1,0 +1,24 @@
+{%- comment -%}
+  O&M logo from theme assets. Keep the solora-logo snippet name for existing theme wiring.
+{%- endcomment -%}
+{%- liquid
+  assign logo_width = settings.logo_width | default: 72
+  if logo_width < 40
+    assign logo_width = 40
+  endif
+  if logo_width > 160
+    assign logo_width = 160
+  endif
+  assign logo_height = logo_width
+-%}
+<div class="header__heading-logo-wrapper solora-logo-wrapper">
+  <img
+    src="{{ 'logo.png' | asset_url }}"
+    alt="{{ shop.name | escape }}"
+    class="header__heading-logo motion-reduce solora-logo"
+    width="{{ logo_width }}"
+    height="{{ logo_height }}"
+    loading="eager"
+    fetchpriority="high"
+  >
+</div>

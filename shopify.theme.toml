@@ -1,0 +1,7 @@
+# Shopify CLI theme configuration for O&M
+# Working directory: C:\Users\zezos\OneDrive\Desktop\orca\O&M
+
+[environments.default]
+store = "o-m-store-cmaqnnbu.myshopify.com"
+path = "."
+theme = "155804205224"

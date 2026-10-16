@@ -1,0 +1,20 @@
+{%- comment -%}
+  Streetwear price row using Shopify money filters.
+  Accepts: product, use_variant
+{%- endcomment -%}
+{%- liquid
+  assign target = product.selected_or_first_available_variant
+  if use_variant and product.selected_or_first_available_variant
+    assign target = product.selected_or_first_available_variant
+  endif
+  assign compare = target.compare_at_price
+  assign price = target.price
+-%}
+<div class="om-price">
+  <span class="om-price__current">{{ price | money }}</span>
+  {%- if compare > price -%}
+    <s class="om-price__compare">{{ compare | money }}</s>
+    {%- assign save_pct = compare | minus: price | times: 100.0 | divided_by: compare | round -%}
+    <span class="om-price__save">-{{ save_pct }}%</span>
+  {%- endif -%}
+</div>

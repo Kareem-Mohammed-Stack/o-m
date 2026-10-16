@@ -1,0 +1,28 @@
+{%- comment -%}
+  Streetwear product card. Reuses the theme card-product logic so variants,
+  inventory, quick add, and money filters stay dynamic.
+{%- endcomment -%}
+{%- liquid
+  assign om_ratio = media_aspect_ratio | default: 'portrait'
+  assign om_secondary = show_secondary_image | default: true
+  assign om_quick = show_quick_add | default: true
+  assign om_vendor = show_vendor | default: false
+  assign om_rating = show_rating | default: false
+-%}
+<div class="om-product-card">
+  {% render 'card-product',
+    card_product: card_product,
+    media_aspect_ratio: om_ratio,
+    media_no_crop: media_no_crop,
+    show_secondary_image: om_secondary,
+    show_vendor: om_vendor,
+    show_rating: om_rating,
+    show_quick_desc: false,
+    show_quick_add: om_quick,
+    show_secondary_add: false,
+    show_scroll_tags: false,
+    section_id: section_id,
+    lazy_load: lazy_load,
+    placeholder_image: placeholder_image
+  %}
+</div>

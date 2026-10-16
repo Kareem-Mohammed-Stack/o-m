@@ -1,0 +1,316 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "back_to_top_Ca7nbV": {
+      "type": "back-to-top",
+      "disabled": true,
+      "settings": {
+        "hide_on_mobile": false,
+        "show_when_precent_of_page": 60,
+        "button_position": "center",
+        "button_bg_color": "#ffffff",
+        "button_border_color": "#dddddd",
+        "icon_color": "#000000",
+        "button_diameter": 48,
+        "icon_size": 24,
+        "horizontal_padding": 20,
+        "vertical_padding": 100
+      }
+    },
+    "trust_badges_LN3iJX": {
+      "type": "trust-badges",
+      "blocks": {
+        "image_xMgRGk": {
+          "type": "image",
+          "settings": {
+            "feature_title": "<strong>Fast shipping</strong>",
+            "feature_text": "<p>Tracked delivery on every O&amp;M order.</p>",
+            "feature_url": "",
+            "hide_image": false
+          }
+        },
+        "image_RgRA8N": {
+          "type": "image",
+          "settings": {
+            "feature_title": "<strong>Easy returns</strong>",
+            "feature_text": "<p>Send it back within 30 days if it is not right.</p>",
+            "feature_url": "",
+            "hide_image": false
+          }
+        },
+        "image_kh6e7A": {
+          "type": "image",
+          "settings": {
+            "feature_title": "<strong>Secure checkout</strong>",
+            "feature_text": "<p>Pay safely with Shopify-protected checkout.</p>",
+            "feature_url": "",
+            "hide_image": false
+          }
+        },
+        "image_Jpgbqc": {
+          "type": "image",
+          "settings": {
+            "feature_title": "<strong>Quality first</strong>",
+            "feature_text": "<p>Streetwear built for daily wear, not one night.</p>",
+            "feature_url": "",
+            "hide_image": false
+          }
+        }
+      },
+      "block_order": [
+        "image_xMgRGk",
+        "image_RgRA8N",
+        "image_kh6e7A",
+        "image_Jpgbqc"
+      ],
+      "settings": {
+        "feature_row": 4,
+        "feature_row_mobile": 2,
+        "feature_gap": 20,
+        "feature_gap_mobile": 20,
+        "feature_padding_horizontal": 0,
+        "feature_padding_vertical": 0,
+        "feature_radius": 16,
+        "feature_border_thickness": 0,
+        "feature_shadow": false,
+        "feature_heading_size": 14,
+        "feature_heading_size_mobile": 12,
+        "feature_heading_height": 130,
+        "feature_heading_mt": 8,
+        "feature_text_size": 12,
+        "feature_text_size_mobile": 12,
+        "feature_text_height": 130,
+        "feature_text_mt": 4,
+        "feature_icon_size": 42,
+        "feature_icon_size_mobile": 42,
+        "feature_bg": "#111111",
+        "feature_border_color": "#000000",
+        "feature_shadow_color": "#000000",
+        "feature_heading_color": "#ffffff",
+        "feature_text_color": "#c9c9c9",
+        "feature_icon_color": "#C69545",
+        "background_color": "#111111",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": false,
+        "content_width": 120,
+        "border_thickness": 0,
+        "lazy": true
+      },
+      "disabled": true
+    },
+    "scroll_text_wbC33X": {
+      "type": "scroll-text",
+      "blocks": {
+        "text_KAXFmg": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>Free Shipping</strong>",
+            "url": "",
+            "icon": "none",
+            "outline_all": false,
+            "outline_text": "Shipping",
+            "text_color": "#212121",
+            "text_size": 50,
+            "text_size_mobile": 32,
+            "text_height": 130,
+            "text_mr": 50,
+            "text_mr_mobile": 40
+          }
+        },
+        "text_FEgxPc": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>Best Price</strong>",
+            "url": "",
+            "icon": "none",
+            "outline_all": false,
+            "outline_text": "Price",
+            "text_color": "#212121",
+            "text_size": 50,
+            "text_size_mobile": 32,
+            "text_height": 130,
+            "text_mr": 50,
+            "text_mr_mobile": 40
+          }
+        },
+        "text_Fmk9gC": {
+          "type": "text",
+          "settings": {
+            "text": "<strong>24/7 Customer Support</strong>",
+            "url": "",
+            "icon": "none",
+            "outline_all": false,
+            "outline_text": "Customer",
+            "text_color": "#212121",
+            "text_size": 50,
+            "text_size_mobile": 32,
+            "text_height": 130,
+            "text_mr": 50,
+            "text_mr_mobile": 40
+          }
+        }
+      },
+      "block_order": [
+        "text_KAXFmg",
+        "text_FEgxPc",
+        "text_Fmk9gC"
+      ],
+      "disabled": true,
+      "settings": {
+        "reverse_direction": false,
+        "pause_hover": true,
+        "lazy": true,
+        "scrolling_velocity": 112,
+        "scrolling_velocity_mobile": 88,
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_horizontal": 0,
+        "margin_horizontal_mobile": 0,
+        "padding_top": 4,
+        "padding_bottom": 4,
+        "padding_horizontal": 0,
+        "padding_horizontal_mobile": 0,
+        "full_width": true,
+        "content_width": 120,
+        "border_thickness": 0,
+        "section_radius": 0
+      }
+    },
+    "420dbb1b-f872-4861-99ec-c6ce83df4831": {
+      "type": "newsletter",
+      "blocks": {
+        "sections--15124688797779__420dbb1b-f872-4861-99ec-c6ce83df4831-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Join the drop list",
+            "heading_size": "h2"
+          }
+        },
+        "sections--15124688797779__420dbb1b-f872-4861-99ec-c6ce83df4831-paragraph-1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>New arrivals, restocks, and member-only offers from O&amp;M.</p>"
+          }
+        },
+        "sections--15124688797779__420dbb1b-f872-4861-99ec-c6ce83df4831-email_form-1": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "sections--15124688797779__420dbb1b-f872-4861-99ec-c6ce83df4831-heading-1",
+        "sections--15124688797779__420dbb1b-f872-4861-99ec-c6ce83df4831-paragraph-1",
+        "sections--15124688797779__420dbb1b-f872-4861-99ec-c6ce83df4831-email_form-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "accent-2",
+        "full_width": true,
+        "text_align": "center",
+        "news_alignment": "horizontal",
+        "show_small_text": true,
+        "small_text": "* Unsubscribe anytime. No spam.",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "margin_top": 0,
+        "margin_bottom": 0
+      }
+    },
+    "waves_KCdRPV": {
+      "type": "waves",
+      "disabled": true,
+      "settings": {
+        "wave_color": "#fff5f7",
+        "wave_height": 40,
+        "wave_speed": 10,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "brand_om": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
+        },
+        "link_list_YkcPW4": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Information",
+            "menu": "footer"
+          }
+        },
+        "0dfe9e9f-d96e-442f-be6e-881afaba1771": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "menu": "main-menu"
+          }
+        },
+        "text_y3qDPH": {
+          "type": "text",
+          "settings": {
+            "heading": "Need to Get in Touch?",
+            "subtext": "<p>For any question!</p><p><a href=\"mailto:omar.ielkady12@gmail.com\"><strong>omar.ielkady12@gmail.com</strong></a></p><p>+20 114 323 1267</p><p><a href=\"/pages/faq\">Read the FAQ</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "brand_om",
+        "link_list_YkcPW4",
+        "0dfe9e9f-d96e-442f-be6e-881afaba1771",
+        "text_y3qDPH"
+      ],
+      "settings": {
+        "color_scheme": "inverse",
+        "footer_bg": "#111111",
+        "footer_text": "#ffffff",
+        "brand_kicker": "O&M STREETWEAR",
+        "brand_about": "<p>Utility streetwear with industrial energy. Built for daily wear, gold-lined details, and a clean editorial cut.</p>",
+        "show_collapse": false,
+        "show_border": false,
+        "show_body_font": "head",
+        "newsletter_enable": false,
+        "newsletter_heading": "Stay in the loop",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "original": "custom",
+        "payment_icon": "visa,master,paypal,apple_pay,shopify-pay,google-pay",
+        "hide_shopify": true,
+        "copyright": "Powered by <a href=\"https://orcaad.com\" target=\"_blank\" rel=\"noopener\">OrcaAd</a>",
+        "show_bottom_text": false,
+        "bottom_text": "",
+        "color_bottom_text": "#ffffff",
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 32,
+        "padding_bottom": 12
+      }
+    }
+  },
+  "order": [
+    "back_to_top_Ca7nbV",
+    "trust_badges_LN3iJX",
+    "scroll_text_wbC33X",
+    "420dbb1b-f872-4861-99ec-c6ce83df4831",
+    "waves_KCdRPV",
+    "footer"
+  ]
+}

@@ -1,0 +1,206 @@
+{%- if section.settings.show_bar -%}
+  {%- liquid
+    assign promo_text = section.settings.heading
+    if section.settings.price_2 != blank
+      assign promo_text = promo_text | replace: '[PRICE2]', section.settings.price_2
+    endif
+    if section.settings.price_3 != blank
+      assign promo_text = promo_text | replace: '[PRICE3]', section.settings.price_3
+    endif
+    if section.settings.price_2 != blank
+      assign promo_text = promo_text | replace: '[PRICE]', section.settings.price_2
+    endif
+  -%}
+
+  {%- style -%}
+    #shopify-section-{{ section.id }} .om-promo {
+      background: {{ section.settings.background }};
+      color: {{ section.settings.text_color }};
+    }
+    #shopify-section-{{ section.id }} .om-promo__unit-value {
+      color: {{ section.settings.number_color }};
+    }
+    #shopify-section-{{ section.id }} .om-promo__close {
+      color: {{ section.settings.text_color }};
+    }
+  {%- endstyle -%}
+
+  <div
+    class="om-promo"
+    data-om-promo
+    data-mode="{{ section.settings.mode }}"
+    data-deadline="{{ section.settings.deadline }}"
+    data-evergreen-hours="{{ section.settings.evergreen_hours }}"
+    data-storage-key="om-promo-closed-{{ section.id }}"
+    data-expire-action="{{ section.settings.expire_action }}"
+    hidden
+  >
+    <div class="om-promo__inner page-width">
+      <p class="om-promo__copy" data-om-promo-copy>{{ promo_text }}</p>
+      <p class="om-promo__expired" data-om-promo-expired hidden>{{ section.settings.expired_message }}</p>
+      <div class="om-promo__timer" data-om-promo-timer role="timer" aria-live="off" aria-atomic="true">
+        <div class="om-promo__unit">
+          <span class="om-promo__unit-value" data-days>00</span>
+          <span class="om-promo__unit-label">{{ section.settings.label_days }}</span>
+        </div>
+        <div class="om-promo__unit">
+          <span class="om-promo__unit-value" data-hours>00</span>
+          <span class="om-promo__unit-label">{{ section.settings.label_hours }}</span>
+        </div>
+        <div class="om-promo__unit">
+          <span class="om-promo__unit-value" data-minutes>00</span>
+          <span class="om-promo__unit-label">{{ section.settings.label_minutes }}</span>
+        </div>
+        <div class="om-promo__unit">
+          <span class="om-promo__unit-value" data-seconds>00</span>
+          <span class="om-promo__unit-label">{{ section.settings.label_seconds }}</span>
+        </div>
+      </div>
+      {%- if section.settings.show_close -%}
+        <button type="button" class="om-promo__close" data-om-promo-close aria-label="{{ section.settings.close_label | escape }}">
+          {% render 'icon-custom', icon: 'close' %}
+        </button>
+      {%- endif -%}
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Promo countdown",
+  "tag": "section",
+  "class": "section om-promo-section",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_bar",
+      "label": "Show promotional bar",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Promotional message",
+      "info": "Use [PRICE], [PRICE2], or [PRICE3] as placeholders.",
+      "default": "35% OFF — GET 2 FOR [PRICE2] — GET 3 FOR [PRICE3]"
+    },
+    {
+      "type": "text",
+      "id": "price_2",
+      "label": "Get 2 for price",
+      "default": "$89"
+    },
+    {
+      "type": "text",
+      "id": "price_3",
+      "label": "Get 3 for price",
+      "default": "$119"
+    },
+    {
+      "type": "select",
+      "id": "mode",
+      "label": "Countdown mode",
+      "options": [
+        { "value": "deadline", "label": "Fixed deadline" },
+        { "value": "evergreen", "label": "Evergreen (restarts)" }
+      ],
+      "default": "evergreen"
+    },
+    {
+      "type": "text",
+      "id": "deadline",
+      "label": "Deadline",
+      "info": "Use YYYY-MM-DD HH:MM for fixed deadline mode.",
+      "default": "2026-12-31 23:59"
+    },
+    {
+      "type": "range",
+      "id": "evergreen_hours",
+      "min": 1,
+      "max": 72,
+      "step": 1,
+      "unit": "h",
+      "label": "Evergreen duration",
+      "default": 24
+    },
+    {
+      "type": "select",
+      "id": "expire_action",
+      "label": "When the countdown ends",
+      "options": [
+        { "value": "hide", "label": "Hide the bar" },
+        { "value": "message", "label": "Show expired message" }
+      ],
+      "default": "message"
+    },
+    {
+      "type": "text",
+      "id": "expired_message",
+      "label": "Expired message",
+      "default": "This offer has ended — shop the latest drop."
+    },
+    {
+      "type": "text",
+      "id": "label_days",
+      "label": "Days label",
+      "default": "Days"
+    },
+    {
+      "type": "text",
+      "id": "label_hours",
+      "label": "Hours label",
+      "default": "Hrs"
+    },
+    {
+      "type": "text",
+      "id": "label_minutes",
+      "label": "Minutes label",
+      "default": "Min"
+    },
+    {
+      "type": "text",
+      "id": "label_seconds",
+      "label": "Seconds label",
+      "default": "Sec"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_close",
+      "label": "Show close button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "close_label",
+      "label": "Close button label",
+      "default": "Dismiss promotion"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "number_color",
+      "label": "Countdown numbers",
+      "default": "#C69545"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promo countdown"
+    }
+  ]
+}
+{% endschema %}

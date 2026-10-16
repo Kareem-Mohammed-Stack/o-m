@@ -1,0 +1,20 @@
+{%- liquid
+  assign title_check = link.title | downcase | strip
+  if title_check == 'contact' or title_check == 'contact us' or title_check == 'contact information'
+    echo '1'
+  elsif link.url contains '/pages/contact'
+    echo '1'
+  elsif hide_search and title_check == 'search'
+    echo '1'
+  elsif hide_search and link.url contains '/search'
+    echo '1'
+  elsif title_check == 'refund policy' or title_check == 'shipping policy' or title_check == 'terms of service'
+    echo '1'
+  elsif link.url contains '/policies/refund-policy'
+    echo '1'
+  elsif link.url contains '/policies/shipping-policy'
+    echo '1'
+  elsif link.url contains '/policies/terms-of-service'
+    echo '1'
+  endif
+-%}

@@ -1,0 +1,236 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} .om-faq {
+    padding-top: {{ section.settings.padding_top | times: 0.65 | round }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.65 | round }}px;
+    background: {{ section.settings.background }};
+    color: {{ section.settings.text_color }};
+  }
+  @media screen and (min-width: 750px) {
+    #shopify-section-{{ section.id }} .om-faq {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  #shopify-section-{{ section.id }} .om-faq__kicker,
+  #shopify-section-{{ section.id }} .om-faq__icon {
+    color: {{ section.settings.accent_color }};
+  }
+  #shopify-section-{{ section.id }} .om-faq__item[open] .om-faq__question {
+    color: {{ section.settings.accent_color }};
+  }
+{%- endstyle -%}
+
+<section class="om-faq" aria-labelledby="OmFaqHeading-{{ section.id }}">
+  <div class="page-width om-faq__inner">
+    <header class="om-faq__header">
+      {%- if section.settings.kicker != blank -%}
+        <p class="om-faq__kicker">{{ section.settings.kicker | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 id="OmFaqHeading-{{ section.id }}" class="om-faq__heading">{{ section.settings.heading | escape }}</h2>
+      {%- else -%}
+        <h2 id="OmFaqHeading-{{ section.id }}" class="visually-hidden">FAQ</h2>
+      {%- endif -%}
+      {%- if section.settings.subheading != blank -%}
+        <div class="om-faq__subheading rte">{{ section.settings.subheading }}</div>
+      {%- endif -%}
+    </header>
+
+    <div class="om-faq__list">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'question' -%}
+          <details
+            class="om-faq__item"
+            {{ block.shopify_attributes }}
+            {% if block.settings.open_by_default %}open{% endif %}
+          >
+            <summary class="om-faq__summary">
+              <span class="om-faq__question">{{ block.settings.heading | escape }}</span>
+              <span class="om-faq__icon" aria-hidden="true"></span>
+            </summary>
+            <div class="om-faq__answer rte">
+              {{ block.settings.answer }}
+            </div>
+          </details>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{%- if section.settings.enable_schema -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {%- assign faq_first = true -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'question' and block.settings.heading != blank -%}
+            {%- unless faq_first -%},{%- endunless -%}
+            {
+              "@type": "Question",
+              "name": {{ block.settings.heading | json }},
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": {{ block.settings.answer | strip_html | json }}
+              }
+            }
+            {%- assign faq_first = false -%}
+          {%- endif -%}
+        {%- endfor -%}
+      ]
+    }
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "FAQ",
+  "tag": "section",
+  "class": "section om-faq-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "kicker",
+      "label": "Kicker",
+      "default": "NEED HELP?"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Frequently asked questions"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p>Answers about O&M orders, shipping, returns, and product care.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_support",
+      "label": "Show support row",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "support_heading",
+      "label": "Support heading",
+      "default": "Still need help?"
+    },
+    {
+      "type": "richtext",
+      "id": "support_text",
+      "label": "Support text",
+      "default": "<p>Email hello@oandm.com or use the contact form. We typically reply within one business day.</p>"
+    },
+    {
+      "type": "text",
+      "id": "support_label",
+      "label": "Support button",
+      "default": "Contact us"
+    },
+    {
+      "type": "url",
+      "id": "support_link",
+      "label": "Support link"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_schema",
+      "label": "Output FAQ schema",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#f4f4f2"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#111111"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent color",
+      "default": "#C69545"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 64
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Question",
+          "default": "How long does shipping take?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Most orders leave the warehouse in 1–2 business days.</p>"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_by_default",
+          "label": "Open by default",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ",
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "heading": "What is your return window?",
+            "answer": "<p>O&M accepts unworn returns within 30 days of delivery.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "heading": "How long does shipping take?",
+            "answer": "<p>Most orders leave the warehouse in 1–2 business days.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,120 @@
+{
+  "sections": {
+    "editorial_hero": {
+      "type": "editorial-hero",
+      "settings": {
+        "overlay_opacity": 0,
+        "heading": "Premium T-shirts",
+        "subheading": "Iconic style. Everyday wear.",
+        "cta_label": "Shop all products",
+        "collection": "",
+        "make_clickable": true,
+        "heading_color": "#ffffff",
+        "cta_color": "#ffffff"
+      }
+    },
+    "featured_product_grid": {
+      "type": "featured-product-grid",
+      "settings": {
+        "title": "New arrivals",
+        "collection": "",
+        "products_to_show": 8,
+        "show_view_all": true,
+        "view_all_label": "View all",
+        "image_ratio": "portrait",
+        "show_secondary_image": true,
+        "enable_quick_add": true,
+        "background": "#f4f4f2",
+        "text_color": "#111111",
+        "accent_color": "#C69545",
+        "padding_top": 36,
+        "padding_bottom": 48
+      }
+    },
+    "rich_text_om": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Built for the city",
+            "heading_size": "h2"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>O&amp;M designs sharp, durable streetwear with industrial energy and a clean editorial cut. Shop the latest drop, then make it yours.</p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop the collection",
+            "button_link": "shopify://collections/all",
+            "button_style_secondary": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": ["heading", "text", "button"],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 56
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "returns": {
+          "type": "question",
+          "settings": {
+            "heading": "What is your return window?",
+            "answer": "<p>O&amp;M accepts unworn returns within 30 days of delivery. Items should have original tags attached. Start a return from your order confirmation email or the <a href=\"/pages/contact\">contact page</a>.</p>",
+            "open_by_default": true
+          }
+        },
+        "shipping_time": {
+          "type": "question",
+          "settings": {
+            "heading": "How long does shipping take?",
+            "answer": "<p>Most orders leave the warehouse in 1–2 business days. Domestic delivery is typically 3–7 business days after dispatch. International orders can take 7–21 business days depending on customs.</p>",
+            "open_by_default": false
+          }
+        },
+        "tracking": {
+          "type": "question",
+          "settings": {
+            "heading": "How can I track my order?",
+            "answer": "<p>A tracking number is emailed as soon as your O&amp;M parcel ships. Use that link for live carrier updates.</p>",
+            "open_by_default": false
+          }
+        }
+      },
+      "block_order": ["returns", "shipping_time", "tracking"],
+      "settings": {
+        "kicker": "NEED HELP?",
+        "heading": "Frequently asked questions",
+        "subheading": "<p>Answers about O&amp;M orders, shipping, returns, and product care.</p>",
+        "show_support": false,
+        "support_heading": "Still need help?",
+        "support_text": "<p>Email <a href=\"mailto:hello@oandm.com\">hello@oandm.com</a> or use the contact form. We typically reply within one business day.</p>",
+        "support_label": "Contact us",
+        "support_link": "/pages/contact",
+        "enable_schema": true,
+        "background": "#f4f4f2",
+        "text_color": "#111111",
+        "accent_color": "#C69545",
+        "padding_top": 48,
+        "padding_bottom": 64
+      }
+    }
+  },
+  "order": ["editorial_hero", "featured_product_grid", "rich_text_om", "faq"]
+}

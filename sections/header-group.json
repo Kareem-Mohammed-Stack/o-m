@@ -1,0 +1,65 @@
+{
+  "type": "header",
+  "name": "t:sections.header.name",
+  "sections": {
+    "promo_countdown": {
+      "type": "promo-countdown",
+      "disabled": true,
+      "settings": {
+        "show_bar": false,
+        "heading": "35% OFF — GET 2 FOR [PRICE2] — GET 3 FOR [PRICE3]",
+        "price_2": "$89",
+        "price_3": "$119",
+        "mode": "evergreen",
+        "deadline": "2026-12-31 23:59",
+        "evergreen_hours": 24,
+        "expire_action": "message",
+        "expired_message": "This offer has ended — shop the latest drop.",
+        "label_days": "Days",
+        "label_hours": "Hrs",
+        "label_minutes": "Min",
+        "label_seconds": "Sec",
+        "show_close": true,
+        "close_label": "Dismiss promotion",
+        "background": "#111111",
+        "text_color": "#ffffff",
+        "number_color": "#C69545"
+      }
+    },
+    "header": {
+      "type": "header",
+      "custom_css": [],
+      "settings": {
+        "logo_position": "middle-left",
+        "hide_search": false,
+        "menu": "main-menu",
+        "sticky_header_type": "always",
+        "show_line_separator": true,
+        "transparent_header": "none",
+        "content_color": "#ffffff",
+        "menu_type_desktop": "dropdown",
+        "menu_hover": true,
+        "mega_columns": "20",
+        "menu_align": "left",
+        "extended-megamenu-show-imgs": "no",
+        "link_img_size": 100,
+        "img_radius": 0,
+        "mega_menu_head_size": 16,
+        "head_menu_bold": true,
+        "mega_menu_link_size": 14,
+        "menu_bold": true,
+        "mega_menu_head_color": "",
+        "mega_menu_link_color": "",
+        "color_scheme": "inverse",
+        "menu_color_scheme": "background-1",
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 8,
+        "padding_bottom": 8
+      }
+    }
+  },
+  "order": ["promo_countdown", "header"]
+}

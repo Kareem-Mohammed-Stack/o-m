@@ -1,0 +1,10 @@
+# Ignore local tooling artifacts
+.DS_Store
+Thumbs.db
+*.log
+node_modules/*
+.shopify/*
+_theme_check_out.txt
+_brand_*.js
+_policies/*
+blocks/*
